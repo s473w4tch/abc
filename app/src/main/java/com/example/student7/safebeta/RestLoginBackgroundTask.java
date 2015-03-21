@@ -22,7 +22,7 @@ public class RestLoginBackgroundTask {
     @Background
     void login(EmailAndPassword emailAndPassword) {
         try {
-            restClient.setHeader("X-Dreamfactory-Application-Name", "safebeta");
+            restClient.setHeader("X-Dreamfactory-Application-Name", "safetest");
             User user = restClient.email(emailAndPassword);
             publishResult(user);
         } catch (Exception e) {
