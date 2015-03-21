@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
@@ -57,7 +56,7 @@ public class LoginActivity extends ActionBarActivity {
     public void loginSuccess(User user) {
 
         ringProgressDialog.dismiss();
-        Toast.makeText(this, "You have logged successful", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "You have logged successful " + user.displayName.toString(), Toast.LENGTH_LONG).show();
         //MainPage_.intent(this).user(user).start();
         ChooseActivity_.intent(this).start();
     }
