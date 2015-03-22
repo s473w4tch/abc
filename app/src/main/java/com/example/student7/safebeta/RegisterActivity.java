@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 
 import com.example.student7.safebeta.data.EmailAndPassword;
+
 import com.example.student7.safebeta.data.User;
 import com.example.student7.safebeta.data.Account;
 import com.example.student7.safebeta.data.UserDB;
@@ -93,22 +94,35 @@ public class RegisterActivity extends Activity {
             userDB.password = new_password.getText().toString();
             userDB.phoneNumber = Integer.parseInt(phone_number.getText().toString());
             userDB.idNumber = Integer.parseInt(id_number.getText().toString());
+           // userDB.userdIdApi = user.id;
+
             try {
                 restBackgroundTask.createUserDB(userDB);
+
             } catch (NullPointerException e) {
                 showError(e);
 
             }
-            Toast.makeText(this, "Zarejestrowano", Toast.LENGTH_LONG).show();
             ringProgressDialog.dismiss();
-            //StartActivity_.intent(this).start();
-            finish();
+            //Toast.makeText(this, "You have create account successful ", Toast.LENGTH_LONG).show();
+           // finish();
+
+
+
+
 
         } else {
             Toast.makeText(this, "Prosze wypełnić wszystkie pola", Toast.LENGTH_LONG).show();
         }
+        /**/
 
+    }
+    public void loginSuccess1(User user) {
 
+        ringProgressDialog.dismiss();
+        Toast.makeText(this, "You have logged successful " + user.email.toString(), Toast.LENGTH_LONG).show();
+        //MainPage_.intent(this).user(user).start();
+        //ChooseActivity_.intent(this).start();
     }
 
     public void showError(Exception e) {

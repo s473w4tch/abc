@@ -56,18 +56,13 @@ public class LoginActivity extends ActionBarActivity {
     public void loginSuccess(User user) {
 
         ringProgressDialog.dismiss();
-        Toast.makeText(this, "You have logged successful " + user.displayName.toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "You have logged successful " + user.email.toString(), Toast.LENGTH_LONG).show();
         //MainPage_.intent(this).user(user).start();
-        ChooseActivity_.intent(this).start();
+        //ChooseActivity_.intent(this).start();
     }
 
 
-    /*public void loginSuccess(User user) {
-        ringProgressDialog.dismiss();
-        MainPage_.intent(this).user(user).start();
-        //MainPage_.intent(this).start();
-        Toast.makeText(this, "You have logged successful", Toast.LENGTH_LONG).show();
-    }*/
+
 
     public void showError(Exception e) {
         ringProgressDialog.dismiss();

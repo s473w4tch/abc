@@ -23,11 +23,12 @@ public interface RestClient extends RestClientHeaders {
     @Post("/user/session")
     User email (EmailAndPassword emailAndPassword);
 
+
 /*
     @Post("/user/register/?login=true")
     RegisterUser registerNewUser(RegisterUser registerUser);
 */
-    @Post("/user/register/?login=true")
+    @Post("/user/register")
     Account createUser(Account account);
 
     @Post("/safetest/uzyt")

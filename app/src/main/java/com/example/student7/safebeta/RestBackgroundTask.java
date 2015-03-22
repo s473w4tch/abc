@@ -25,7 +25,7 @@ public class RestBackgroundTask {
     @RootContext
     UlubioneActivity activity2;*/
    @RootContext
-   RegisterActivity activity;
+    RegisterActivity activity;
     @RestService
     RestClient restClient;
 
@@ -70,7 +70,18 @@ public class RestBackgroundTask {
         }
     }
 
+   /* @Background
+    void getSession() {
 
+        try {
+            restClient.setHeader("X-Dreamfactory-Application-Name", "safetest");
+            Session session = restClient.getSession();
+
+            publishResult1(session);
+        } catch (Exception e) {
+            publishError(e);
+        }
+    }*/
 
 
 
@@ -84,8 +95,14 @@ public class RestBackgroundTask {
         }
     }
    */
-
-
+/*@UiThread
+void publishResult1(Session session) {
+    try {
+        activity.sessionInfo(session);
+    } catch ( NullPointerException e) {
+        publishError(e);
+    }
+}*/
     @UiThread
     void publishError(Exception e) {
         activity.showError(e);

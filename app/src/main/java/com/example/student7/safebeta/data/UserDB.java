@@ -15,6 +15,7 @@ public class UserDB implements Serializable {
     public  String password;
     public String email;
     public Integer phoneNumber;
+    public Integer userdIdApi;
 
 
 

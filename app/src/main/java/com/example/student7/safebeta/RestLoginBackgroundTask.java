@@ -15,6 +15,8 @@ public class RestLoginBackgroundTask {
 
     @RootContext
     LoginActivity activity;
+    @RootContext
+    RegisterActivity activityReg;
 
     @RestService
     RestClient restClient;
@@ -24,16 +26,25 @@ public class RestLoginBackgroundTask {
         try {
             restClient.setHeader("X-Dreamfactory-Application-Name", "safetest");
             User user = restClient.email(emailAndPassword);
+           // publishResult1(user);
             publishResult(user);
+
+
         } catch (Exception e) {
             publishError(e);
         }
     }
 
-    @UiThread
+   @UiThread
     void publishResult(User user) {
         activity.loginSuccess(user);
+
     }
+    /*@UiThread
+    void publishResult1(User user) {
+        activityReg.loginSuccess1(user);
+
+    }*/
 
     @UiThread
     void publishError(Exception e) {
